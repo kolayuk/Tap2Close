@@ -1,0 +1,46 @@
+
+TARGET			Tap2Close.exe
+UID			   0x100039CE 0xE18A2A40
+VENDORID	  	  0
+TARGETTYPE		exe
+EPOCSTACKSIZE	 0x5000
+
+SYSTEMINCLUDE \epoc32\include \epoc32\include\variant \epoc32\include\ecom
+USERINCLUDE	   ..\inc ..\data
+
+SOURCEPATH		..\data
+START RESOURCE	Tap2Close.rss
+HEADER
+TARGETPATH resource\apps
+END //RESOURCE
+
+START RESOURCE E18A2A40.rss
+END
+
+START RESOURCE	Tap2Close_reg.rss
+TARGETPATH 	  \private\10003a3f\apps
+END //RESOURCE
+
+LIBRARY			euser.lib apparc.lib cone.lib eikcore.lib avkon.lib
+LIBRARY			commonengine.lib efsrv.lib estor.lib eikcoctl.lib eikdlg.lib 
+LIBRARY			eikctl.lib bafl.lib fbscli.lib aknnotify.lib aknicon.lib
+LIBRARY			etext.lib gdi.lib egul.lib insock.lib
+LIBRARY			ecom.lib InetProtUtil.lib http.lib esock.lib ws32.lib apgrfx.lib
+
+LANG 				16
+
+START BITMAP	Tap2Close.mbm
+HEADER
+TARGETPATH		\resource\apps
+SOURCEPATH		..\gfx
+SOURCE	c12,1	list_icon.bmp list_icon_mask.bmp list_icon_mask2.bmp
+END
+
+SOURCEPATH		..\src
+
+#ifdef ENABLE_ABIV2_MODE
+DEBUGGABLE_UDEBONLY
+#endif
+
+SOURCE Main.cpp MainView.cpp Tap2CloseAppUi.cpp Tap2CloseApplication.cpp Tap2CloseDocument.cpp GroupListObserver.cpp
+CAPABILITY ReadDeviceData WriteDeviceData LocalServices UserEnvironment ReadUserData WriteUserData TrustedUI PowerMgmt ReadDeviceData WriteDeviceData ProtServ SwEvent NetworkServices Location SurroundingsDD

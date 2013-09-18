@@ -1,0 +1,20 @@
+/*
+========================================================================
+ Name        : Tap2Close.l16
+ Author      : Usanov-Kornilov Nikolay (aka Kolay)
+ Copyright   : 
+Contacts:
+	kolayuk@mail.ru
+	http://kolaysoft.ru
+
+(c) KolaySoft, 2010
+
+ Description : 
+========================================================================
+*/
+// localized strings for language: Russian (16)
+#define STR_Tap2CloseApplication_2 ""
+#define STR_Tap2CloseApplication_3 ""
+#define STR_Tap2CloseApplication_4 "Tap2Close"
+#define STR_Tap2CloseApplication_5 "Tap2Close"
+#define STR_Tap2CloseApplication_1 ""

@@ -1,0 +1,62 @@
+/*
+========================================================================
+ Name        : Main.rssi
+ Author      : Usanov-Kornilov Nikolay (aka Kolay)
+ Copyright   : 
+Contacts:
+	kolayuk@mail.ru
+	http://kolaysoft.ru
+
+(c) KolaySoft, 2010
+
+ Description : 
+========================================================================
+*/
+#include "Main.loc"
+#include <avkon.mbg>
+
+
+RESOURCE AVKON_VIEW r_main_main_view
+	{
+	cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+	menubar = r_main_options_menu;
+	toolbar = 0;
+	}
+RESOURCE MENU_BAR r_main_options_menu
+	{
+	}
+RESOURCE STATUS_PANE_APP_MODEL r_main_status_pane
+	{
+	panes =
+		{
+		SPANE_PANE
+			{
+			id = EEikStatusPaneUidTitle;
+			type = EAknCtTitlePane;
+			resource = r_main_title_resource;
+			}
+		};
+	}
+RESOURCE TITLE_PANE r_main_title_resource
+	{
+	txt = STR_MainView_4;
+	}
+RESOURCE LISTBOX r_main_list_box
+	{
+	flags = EAknListBoxSelectionList;
+	}
+
+RESOURCE AVKON_BUTTON r_close_button
+    {
+    flags  = KAknButtonNoFrame|KAknButtonReportOnLongPress;
+    states =
+            {
+            AVKON_BUTTON_STATE
+                {
+                helptxt = "Удерживайте для закрытия";
+                bmpfile = "\\resource\\apps\\Tap2Close.mbm";
+                bmpid =  0;
+                bmpmask =  1;
+                }   
+            };
+}
